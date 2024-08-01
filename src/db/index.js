@@ -2,9 +2,6 @@ import mongoose from "mongoose";
 
 import {DB_NAME} from "../constants.js"
 
-import express from "express"
-const app  = express();
-
 
 const connectDB = async ()=>{
 try {
@@ -12,6 +9,7 @@ try {
     console.log(`\n mongoDB connected !! DB host: ${connectionInstance.connection.host}`);
 } catch (error) {
     console.error(error)
+    process.exit(1);
 }
 
 }
