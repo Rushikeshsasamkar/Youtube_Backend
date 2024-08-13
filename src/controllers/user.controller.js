@@ -184,7 +184,7 @@ const logoutUser = asyncHandler(async(req, res)=>{
             throw new ApiError(401, "Invalid refresh token")
         }
     
-        if(incomingRefreshToken !== user?.refreshToken){
+        if(!incomingRefreshToken !== user?.refreshToken){
             throw new ApiError(401, "Refresh token is expired or used")
         }
     
